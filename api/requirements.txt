@@ -1,2 +1,3 @@
 fastapi
-fastapi-cors
+uvicorn
+python-multipart

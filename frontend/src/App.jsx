@@ -55,14 +55,14 @@ const App = () => {
                         </p>
 
                         <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)' }}>
+                            <a href={`mailto:${data.personal_info.email}`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'inherit', textDecoration: 'none' }}>
                                 <Mail size={18} className="icon-cyan" />
                                 <span>{data.personal_info.email}</span>
-                            </div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)' }}>
+                            </a>
+                            <a href={`tel:${data.personal_info.phone}`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'inherit', textDecoration: 'none' }}>
                                 <Phone size={18} />
                                 <span>{data.personal_info.phone}</span>
-                            </div>
+                            </a>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)' }}>
                                 <MapPin size={18} />
                                 <span>{data.personal_info.location}</span>
