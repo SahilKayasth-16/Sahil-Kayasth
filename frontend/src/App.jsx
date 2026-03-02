@@ -55,12 +55,12 @@ const App = () => {
                         </p>
 
                         <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
-                            <a href={`mailto:${data.personal_info.email}`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'inherit', textDecoration: 'none' }}>
+                            <a href={`mailto:${data.personal_info.email}`} className="contact-link">
                                 <Mail size={18} className="icon-cyan" />
                                 <span>{data.personal_info.email}</span>
                             </a>
-                            <a href={`tel:${data.personal_info.phone}`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'inherit', textDecoration: 'none' }}>
-                                <Phone size={18} />
+                            <a href={`tel:${data.personal_info.phone.replace(/\s+/g, '')}`} className="contact-link">
+                                <Phone size={18} className="icon-secondary" />
                                 <span>{data.personal_info.phone}</span>
                             </a>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)' }}>
