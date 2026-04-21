@@ -55,11 +55,11 @@ const App = () => {
                         </p>
 
                         <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
-                            <a href={`mailto:${data.personal_info.email}`} className="contact-link" rel="noopener noreferrer">
+                            <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=:${data.personal_info.email}`} className="contact-link" rel="noopener noreferrer">
                                 <Mail size={18} className="icon-cyan" />
                                 <span>{data.personal_info.email}</span>
                             </a>
-                            <a href={`tel:${data.personal_info.phone.replace(/\s+/g, '')}`} className="contact-link" rel="noopener noreferrer">
+                            <a href={`tel:${data.personal_info.phone.replace(/\D/g, '')}`} className="contact-link" rel="noopener noreferrer">
                                 <Phone size={18} className="icon-secondary" />
                                 <span>{data.personal_info.phone}</span>
                             </a>
@@ -69,7 +69,7 @@ const App = () => {
                             </div>
                         </div>
 
-                        <a href="/resume.pdf" download="Sahil_Kayasth_Resume.pdf" className="neon-btn" style={{ fontSize: '1.1rem', padding: '1rem 2rem', display: 'inline-block' }}>
+                        <a href="/Sahil%20Bharatkumar%20Kayasth%20Resume%20.pdf" download="Sahil_Kayasth_Resume.pdf" className="neon-btn" style={{ fontSize: '1.1rem', padding: '1rem 2rem', display: 'inline-block' }}>
                             Download Resume
                         </a>
                     </motion.div>
