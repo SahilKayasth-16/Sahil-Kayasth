@@ -81,11 +81,11 @@ resume_data = {
             "url": "https://github.com/SahilKayasth-16/SafeTrack_website"
         },
         {
-            "title": "Technokruti 2K25-Techfest Website",
-            "tech": "HTML, CSS, JavaScript",
-            "period": "Dec 2024 - Feb 2025",
-            "description": "A website containing information about a national level Techfest where students can download rules and register.",
-            "url": "https://github.com/SahilKayasth-16/TechnoKruti-2025"
+            "title": "Resto Pro",
+            "tech": "MERN Stack, Socket.io",
+            "period": "Mar 2026 - Apr 2026",
+            "description": "Full-stack restaurant system with real-time Socket.IO tracking, role-based JWT dashboards, and production-ready REST APIs deployed on Vercel and Render.",
+            "url": "https://restopro-frontend.vercel.app"
         },
         {
             "title": "Fitness Trainer Portfolio",
