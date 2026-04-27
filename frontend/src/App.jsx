@@ -42,37 +42,71 @@ const App = () => {
             {/* Hero Section */}
             <header className="section" style={{ background: 'linear-gradient(135deg, #fff 0%, #f0faff 100%)', paddingBottom: '4rem' }}>
                 <div className="container">
-                    <motion.div {...fadeIn}>
-                        <span className="badge badge-cyan" style={{ marginBottom: '1rem' }}>Available for Jobs</span>
-                        <h1 style={{ fontSize: '4.5rem', marginBottom: '1.5rem', lineHeight: 1.1 }}>
-                            <span style={{ color: 'var(--text-main)' }}>Hi, I'm </span>
-                            <span style={{ background: 'linear-gradient(90deg, var(--primary), var(--secondary))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                                {data.personal_info.name}
-                            </span>
-                        </h1>
-                        <p style={{ fontSize: '1.5rem', color: 'var(--text-muted)', maxWidth: '700px', marginBottom: '2.5rem' }}>
-                            A passionate <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>{data.personal_info.title}</span> specializing in building robust web applications with modern technologies. Final year B.E. student at SNPIT&RC.
-                        </p>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '4rem', flexWrap: 'wrap-reverse' }}>
+                        <motion.div {...fadeIn} style={{ flex: 1, minWidth: '300px' }}>
+                            <span className="badge badge-cyan" style={{ marginBottom: '1rem' }}>Available for Jobs</span>
+                            <h1 style={{ fontSize: '4.5rem', marginBottom: '1.5rem', lineHeight: 1.1 }}>
+                                <span style={{ color: 'var(--text-main)' }}>Hi, I'm </span>
+                                <span style={{ background: 'linear-gradient(90deg, var(--primary), var(--secondary))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                                    {data.personal_info.name}
+                                </span>
+                            </h1>
+                            <p style={{ fontSize: '1.5rem', color: 'var(--text-muted)', maxWidth: '700px', marginBottom: '2.5rem' }}>
+                                A passionate <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>{data.personal_info.title}</span> specializing in building robust web applications with modern technologies. Final year B.E. student at SNPIT&RC.
+                            </p>
 
-                        <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
-                            <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=:${data.personal_info.email}`} className="contact-link" rel="noopener noreferrer">
-                                <Mail size={18} className="icon-cyan" />
-                                <span>{data.personal_info.email}</span>
-                            </a>
-                            <a href={`tel:${data.personal_info.phone.replace(/\D/g, '')}`} className="contact-link" rel="noopener noreferrer">
-                                <Phone size={18} className="icon-secondary" />
-                                <span>{data.personal_info.phone}</span>
-                            </a>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)' }}>
-                                <MapPin size={18} />
-                                <span>{data.personal_info.location}</span>
+                            <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+                                <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=:${data.personal_info.email}`} className="contact-link" rel="noopener noreferrer">
+                                    <Mail size={18} className="icon-cyan" />
+                                    <span>{data.personal_info.email}</span>
+                                </a>
+                                <a href={`tel:${data.personal_info.phone.replace(/\D/g, '')}`} className="contact-link" rel="noopener noreferrer">
+                                    <Phone size={18} className="icon-secondary" />
+                                    <span>{data.personal_info.phone}</span>
+                                </a>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)' }}>
+                                    <MapPin size={18} />
+                                    <span>{data.personal_info.location}</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <a href="/Sahil%20Bharatkumar%20Kayasth%20Resume%20.pdf" download="Sahil_Kayasth_Resume.pdf" className="neon-btn" style={{ fontSize: '1.1rem', padding: '1rem 2rem', display: 'inline-block' }}>
-                            Download Resume
-                        </a>
-                    </motion.div>
+                            <a href="/Sahil%20Bharatkumar%20Kayasth%20Resume%20.pdf" download="Sahil_Kayasth_Resume.pdf" className="neon-btn" style={{ fontSize: '1.1rem', padding: '1rem 2rem', display: 'inline-block' }}>
+                                Download Resume
+                            </a>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            style={{ flex: '0 0 auto', margin: '0 auto' }}
+                        >
+                            <div style={{
+                                width: '320px',
+                                height: '320px',
+                                borderRadius: '50%',
+                                padding: '8px',
+                                background: 'linear-gradient(45deg, var(--primary), var(--secondary))',
+                                boxShadow: 'var(--neon-shadow-cyan)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}>
+                                <img
+                                    src="/Sahil Kayasth.jpeg"
+                                    alt="Sahil Kayasth"
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        borderRadius: '50%',
+                                        objectFit: 'cover',
+                                        border: '4px solid white'
+                                    }}
+                                />
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
             </header>
 
