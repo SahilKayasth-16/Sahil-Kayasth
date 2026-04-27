@@ -3,8 +3,44 @@ import { motion } from 'framer-motion';
 import {
     Mail, Phone, MapPin, GraduationCap, Briefcase,
     Code2, Rocket, Award, ExternalLink, ChevronRight,
-    Linkedin, Github
+    Linkedin, Github, Instagram
 } from 'lucide-react';
+
+const SkeletonLoader = () => (
+    <div className="portfolio">
+        <header className="section" style={{ background: 'linear-gradient(135deg, #fff 0%, #f0faff 100%)', paddingBottom: '4rem' }}>
+            <div className="container">
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '4rem', flexWrap: 'wrap-reverse' }}>
+                    <div style={{ flex: 1, minWidth: '300px' }}>
+                        <div className="skeleton" style={{ width: '150px', height: '24px', marginBottom: '1rem', borderRadius: '20px' }} />
+                        <div className="skeleton" style={{ width: '80%', height: '80px', marginBottom: '1.5rem' }} />
+                        <div className="skeleton" style={{ width: '90%', height: '60px', marginBottom: '2.5rem' }} />
+                        <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+                            <div className="skeleton" style={{ width: '200px', height: '20px' }} />
+                            <div className="skeleton" style={{ width: '150px', height: '20px' }} />
+                        </div>
+                        <div className="skeleton" style={{ width: '200px', height: '50px', borderRadius: '8px' }} />
+                    </div>
+                    <div className="skeleton" style={{ width: '320px', height: '320px', borderRadius: '50%' }} />
+                </div>
+            </div>
+        </header>
+        <section className="section">
+            <div className="container">
+                <div className="skeleton" style={{ width: '300px', height: '40px', margin: '0 auto 3rem auto' }} />
+                <div style={{ display: 'grid', gap: '2rem' }}>
+                    {[1, 2].map((i) => (
+                        <div key={i} className="neon-card" style={{ height: '200px' }}>
+                            <div className="skeleton" style={{ width: '200px', height: '24px', marginBottom: '1rem' }} />
+                            <div className="skeleton" style={{ width: '150px', height: '20px', marginBottom: '1rem' }} />
+                            <div className="skeleton" style={{ width: '100%', height: '80px' }} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    </div>
+);
 
 const App = () => {
     const [data, setData] = useState(null);
@@ -20,15 +56,7 @@ const App = () => {
             .catch(err => console.error("Error fetching data:", err));
     }, []);
 
-    if (loading) return (
-        <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 1 }}
-                style={{ width: 40, height: 40, border: '4px solid var(--primary)', borderRadius: '50%', borderTopColor: 'transparent' }}
-            />
-        </div>
-    );
+    if (loading) return <SkeletonLoader />;
 
     const fadeIn = {
         initial: { opacity: 0, y: 20 },
@@ -254,6 +282,10 @@ const App = () => {
                         <a href="https://github.com/SahilKayasth-16" target="_blank" rel="noopener noreferrer" className="neon-btn" style={{ borderColor: 'var(--primary)', color: 'var(--primary)', display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.6rem 1.5rem' }}>
                             <Github size={20} />
                             <span>GitHub</span>
+                        </a>
+                        <a href="https://www.instagram.com/_sahil.k.16_/" target="_blank" rel="noopener noreferrer" className="neon-btn" style={{ borderColor: 'var(--accent)', color: 'var(--accent)', display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.6rem 1.5rem' }}>
+                            <Instagram size={20} />
+                            <span>Instagram</span>
                         </a>
                     </div>
                     <p style={{ fontSize: '0.8rem', color: '#666' }}>© 2026 Sahil Kayasth.</p>
